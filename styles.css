@@ -1,0 +1,21 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: "F5F5F5";
+}
+
+mark {
+    background-color: grey;
+    padding: .1%;
+    padding-left: .4%;
+    padding-right: .4%;
+    border-radius: 9000;
+}
+
+a.markText {
+    color: 101010;
+}
+
+h2.asText {
+    display: inline;
+    font-size: inherit;
+}
