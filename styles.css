@@ -1,8 +1,8 @@
 body {
     font-family: 'Courier New', Courier, monospace;
     background-color: #F5F5F5;
-    padding-left: 1%;
-    padding-top: 1.3%
+    padding-top: 1.3%;
+    margin-left: 0%;
 }
 
 mark {
@@ -22,7 +22,9 @@ a.footer-links {
 }
 
 .footer-img {
-    display: inline !important;
+    display: inline;
+    width: 35;
+    height: 35;
     border: 0;
 }
 
