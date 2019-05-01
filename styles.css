@@ -1,6 +1,7 @@
 body {
     font-family: 'Courier New', Courier, monospace;
     background-color: "F5F5F5";
+    padding-left: 1.3%
 }
 
 mark {
@@ -15,7 +16,62 @@ a.markText {
     color: 101010;
 }
 
-h2.asText {
+a.footer-links {
+    display: inline;
+    padding-left: .5%;
+    padding-bottom: .5%;
+}
+
+img.footer-img {
+    display: inline;
+    height: 35;
+    width: 35;
+    padding-left: .5%;
+    padding-bottom: .5%;
+    border: 0;
+}
+
+.asText {
     display: inline;
     font-size: inherit;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: "F5F5F5";
+}
+
+.div-block {
+    display: inline-block
+}
+
+.li-text-heading {
+    display: inline
+}
+
+.li-details {
+    padding-left: 1%;
+    text-overflow: ellipsis;
+    max-width: 55%
+}
+
+.li-details-date {
+    display: inline;
+}
+
+img.li-details-projectinfo {
+    padding-top: .2%;
+    padding-left: .5%;
+    padding-right: .5%;
+}
+
+p.li-details-projectinfo {
+    display: inline;
+}
+
+.contact-info {
+    display: inline;
 }

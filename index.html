@@ -5,12 +5,38 @@
         <meta content="Ari Madian" property="og:title">
         <meta content="akmadian.github.io" property="og:url">
         <meta content="Ari Madian's Portfolio" property="og:description">
+
+        <script src="scripts/github-api-wrapper.js"></script>
     </head>
     <body>
         <h1>Ari Madian</h1>
-        
+        <p>
+        18y/o Seattle based CS student <br>
+        C#, Python, JS, Java
+        </p>
         <div>
             <details>
+                <summary>
+                    <h2 class="asText">Education</h2>
+                </summary>
+                <ul>
+                    <li>
+                        <strong>South Seattle College</strong> - Associate of Science, Computer Science; 3.95 GPA
+                        <br> <p class="li-details-date">2018 - 2020</p>
+                        <div class="li-details">
+                            <p>Formed Hour of Code club - Now chairperson and Curriculum Organizer</p>
+                            <p>Phi Theta Kappa Member</p>
+                        </div>
+                    </li>
+                    <br>
+                    <li>
+                        <strong>Fife High School</strong>
+                        <br> <p class="li-details-date">2015 - 2018</p>
+                    </li>
+                </ul>
+            </details>
+            <br>
+            <details open="true">
                 <summary>
                     <h2 class="asText">Projects</h2>
                 </summary>
@@ -18,27 +44,75 @@
                     <li>
                         <mark>
                             <a href="github.com/akmadian/nzxtsharp" class="markText">
-                                <b>NZXTSharp</b>
+                                <b id="repoId1">NZXTSharp</b>
                             </a>
                         </mark>
                         &nbsp;- The one-stop SDK for NZXT devices.
+
+                        <p id="test"></p>
                     </li>
                     <br>
                     <li>
                         <mark>
                             <a href="github.com/akmadian/nzxtsharp" class="markText">
-                                <b>AlexaComp</b>
+                                <b id="repoId2">AlexaComp</b>
                             </a>
                         </mark>
                         &nbsp;- Control your computer with your Amazon Alexa!
+                        <br>
+                        <div class="li-details-projectinfo">
+                            <span>
+                                <img src="images/github-octocons/star.svg" class="li-details-projectinfo">
+
+                            </span>
+                        </div>
                     </li>
                 </ul>
             </details>
+            <br>
             <details>
-                <summar>
-                    <h2 class="asText">Skills</h2>
-                </summar>
+                <summary>
+                    <h2 class="asText">Experience</h2>
+                </summary>
+                <ul>
+                    <li>
+                        <strong>Enrichment Instructor - Associated Recreation Council</strong>
+                        <br> <p class="li-details-date">Jan 1029 - Present&centerdot;4 mos</p>
+                        <div class="li-details">
+                            <p>Working with ARC and Alki Community Center to deliver weekly after-school enrichment activities to ~10 K-5<sup>th</sup> graders.</p>
+                        </div>
+                    </li>
+                    <br>
+                    <li>
+                        <strong>Guest Experience Lead - McDonald's</strong>
+                        <br> <p class="li-details-date">Apr 2018 - Jul 2018&centerdot;4 mos</p>
+                        <div class="li-details">
+                            <p>Ensured a positive guest experience and provided a helpful face for my location.</p>
+                        </div>
+                    </li>
+                </ul>
             </details>
+            <br>
+            <details>
+                <summary>
+                    <h2 class="asText">Skills</h2>
+                </summary>
+                <ul>
+                    <li>
+                        
+                    </li>
+                </ul>
+            </details>
+        </div>
+        <div>
+            <footer class="footer">
+                <div>
+                    <a href="https://github.com/akmadian"><img src="images/github-logo.svg" alt="GitHub" class="footer-img"></a>
+                    <a href="https://www.linkedin.com/in/arimadian/"><img src="images/linkedin-logo.png" alt="LinkedIn" class="footer-img"></a>
+                    <a href="https://docs.google.com/document/d/1d3umwGeF3ZozZqpt2oEPbuqXg-LRPUmbphoBlbJLfqk/edit?usp=sharing"><img src="images/resume-logo.png" alt="Resume" class="footer-img" style="width: 28"></a>
+                    <p class="contact-info">test</p>
+                </div>
+            </footer>
         </div>
     </body>
 </html>
