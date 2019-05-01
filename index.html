@@ -1,21 +1,35 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
-        <link rel="stylesheet" type="text/css" href="styles.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <title>Ari Madian</title>
         <meta content="Ari Madian" property="og:title">
         <meta content="akmadian.github.io" property="og:url">
         <meta content="Ari Madian's Portfolio" property="og:description">
 
         <script src="scripts/github-api-wrapper.js"></script>
+        <script src="scripts/scripts.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="styles.css">
     </head>
-    <body>
-        <h1>Ari Madian</h1>
-        <p>
-        18y/o Seattle based CS student <br>
-        C#, Python, JS, Java
-        </p>
-        <div>
-            <details>
+    <body onload="LoadDataFromAPIs()">
+        <div class="container" id="header">
+            <h1>Ari Madian</h1>
+            <p>
+            18y/o Seattle based CS student <br>
+            C#, Python, JS, Java
+            </p>
+        </div>
+        <div class="btn-group toggle-menus" role="group" id="toggle-menu-buttons" hidden="true">
+            <button type="button" class="btn btn-light btn-sm" onclick="ExpandAllMenus()">Expand All</button>
+            <button type="button" class="btn btn-light btn-sm" onclick="CollapseAllMenus()">Collapse All</button>
+        </div>
+        <div class="container" id="content">
+            <details id="details-education">
                 <summary>
                     <h2 class="asText">Education</h2>
                 </summary>
@@ -36,41 +50,53 @@
                 </ul>
             </details>
             <br>
-            <details open="true">
+            <details id="details-projects">
                 <summary>
                     <h2 class="asText">Projects</h2>
                 </summary>
                 <ul>
                     <li>
                         <mark>
-                            <a href="github.com/akmadian/nzxtsharp" class="markText">
-                                <b id="repoId1">NZXTSharp</b>
-                            </a>
+                            <a href="github.com/akmadian/nzxtsharp"><b id="repoId1">NZXTSharp</b></a>
                         </mark>
                         &nbsp;- The one-stop SDK for NZXT devices.
-
-                        <p id="test"></p>
+                        <br>
+                        <div>
+                            <img src="images/github-octocons/star.svg" class="li-details-projectinfo">
+                            <p class="li-details-projectinfo" id="repo1-details-starcount"></p>
+                            &centerdot;
+                            <!--
+                                This line is ridiculously long, but breaking it down makes 
+                                a weird line next to the img because of the a tag :/
+                            -->
+                            <a href="https://www.nuget.org/packages/NZXTSharp"><img src="images/nuget-logo.png" class="li-details-projectinfo" width="25"></a>
+                            <p class="li-details-projectinfo" id="repo1-details-downloadcount"></p>
+                        </div>
+                        <div class="li-details" style="padding-top: .25%">
+                            - Designed and built an SDK that facilitates control of NZXT liquid CPU coolers, lighting and fan controllers. <br>
+                            - Reverse engineered and documented serial and HID communication protocols. <br>
+                        </div>
                     </li>
                     <br>
                     <li>
                         <mark>
-                            <a href="github.com/akmadian/nzxtsharp" class="markText">
-                                <b id="repoId2">AlexaComp</b>
-                            </a>
+                            <a href="github.com/akmadian/alexacomp"><b id="repoId2">AlexaComp</b></a>
                         </mark>
-                        &nbsp;- Control your computer with your Amazon Alexa!
+                        &nbsp;- Control your computer with Alexa!
                         <br>
                         <div class="li-details-projectinfo">
-                            <span>
-                                <img src="images/github-octocons/star.svg" class="li-details-projectinfo">
-
-                            </span>
+                            <img src="images/github-octocons/star.svg" class="li-details-projectinfo">
+                            <p class="li-details-projectinfo" id="repo2-details-starcount"></p>
+                        </div>
+                        <div class="li-details" style="padding-top: .25%">
+                            - Built client software with C#, as well as a skill endpoint and a device linking
+                            microservice with AWS Lambda functions running Node.js runtimes.
                         </div>
                     </li>
                 </ul>
             </details>
             <br>
-            <details>
+            <details id="details-experience">
                 <summary>
                     <h2 class="asText">Experience</h2>
                 </summary>
@@ -93,26 +119,44 @@
                 </ul>
             </details>
             <br>
-            <details>
+            <details id="details-skills">
                 <summary>
                     <h2 class="asText">Skills</h2>
                 </summary>
                 <ul>
                     <li>
-                        
+                        <strong>Langs</strong> - C#, Python, JS, Java
+                    </li>
+                    <li>
+                        <strong>VC Systems</strong> - Git (and Git Bash)
+                    </li>
+                    <li>
+                        <strong>Tools</strong> - Many IDEs, GitHub, AWS (and CLI), <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Powershell, RegEx, Bash
+                        <!--Ugly nbsps :(, I don't know how to do this kind of padding yet...-->
                     </li>
                 </ul>
             </details>
         </div>
-        <div>
-            <footer class="footer">
-                <div>
-                    <a href="https://github.com/akmadian"><img src="images/github-logo.svg" alt="GitHub" class="footer-img"></a>
-                    <a href="https://www.linkedin.com/in/arimadian/"><img src="images/linkedin-logo.png" alt="LinkedIn" class="footer-img"></a>
-                    <a href="https://docs.google.com/document/d/1d3umwGeF3ZozZqpt2oEPbuqXg-LRPUmbphoBlbJLfqk/edit?usp=sharing"><img src="images/resume-logo.png" alt="Resume" class="footer-img" style="width: 28"></a>
-                    <p class="contact-info">test</p>
-                </div>
-            </footer>
-        </div>
+        <!--
+            Bad way to prevent the footer from covering 
+            page content when all menus are expanded
+        -->
+        <br><br><br><br><br><br>
+        <footer class="footer">
+            <div class="container no-gutters">
+                <!--
+                    These lines are ridiculously long, but breaking the lines 
+                    down makes a weird line next to the img because of the a tag :/
+                -->
+                <div class="col col-sm footer-img"><a href="https://github.com/akmadian"><img src="images/github-logo.svg" alt="GitHub" width="35" height="35"></a></div>
+                <div class="col col-sm footer-img"><a href="https://www.linkedin.com/in/arimadian/"><img src="images/linkedin-logo.png" alt="LinkedIn"  width="35" height="35"></a></div>
+                <div class="col col-sm footer-img"><a href="https://docs.google.com/document/d/1d3umwGeF3ZozZqpt2oEPbuqXg-LRPUmbphoBlbJLfqk/edit?usp=sharing"><img src="images/resume-logo.png" alt="Resume" width="28" height="35"></a></div>
+                <span style="float: right; padding-bottom: 2.5%">
+                    <a href="mailto:akmadian@gmail.com" class="mailto-link"><u>akmadian@gmail.com</u></a> <br>
+                    (253) 249 - 6636
+                </span>
+            </div>
+        </footer>
     </body>
 </html>
