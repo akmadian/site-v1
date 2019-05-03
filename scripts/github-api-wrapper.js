@@ -1,4 +1,4 @@
-function GetRepoInfo(repoName) {
+function GetRepoStarCount(repoName) {
     return new Promise(function(resolve, reject){
         const Http = new XMLHttpRequest();
         const url = 'https://api.github.com/repos/akmadian/' + repoName;

@@ -6,17 +6,17 @@ function LoadDataFromAPIs() {
 function SetRepoStarCounts() {
     const repoName1 = document.getElementById("repoId1").innerHTML;
     const repoName2 = document.getElementById("repoId2").innerHTML;
-    GetRepoInfo(repoName1)
-        .then(function whenOk(response) {
-            console.log("Setting Star Count for Repo 1. Count = "+response);
-            document.getElementById("repo1-details-starcount").innerHTML = response;
+    GetRepoStarCount(repoName1)
+        .then(function whenOk(starCount) {
+            console.log("Setting Star Count for Repo 1. Count = " + starCount);
+            document.getElementById("repo1-details-starcount").innerHTML = starCount;
         }).catch(function notOk(err){
             console.log("Get Repo Star Count Failed - " + err);
         });
-    GetRepoInfo(repoName2)
-        .then(function whenOk(response) {
-            console.log("Setting Star Count for Repo 2. Count = "+response);
-            document.getElementById("repo2-details-starcount").innerHTML = response;
+    GetRepoStarCount(repoName2)
+        .then(function whenOk(starCount) {
+            console.log("Setting Star Count for Repo 2. Count = " + starCount);
+            document.getElementById("repo2-details-starcount").innerHTML = starCount;
         }).catch(function notOk(err){
             console.log("Get Repo Star Count Failed - " + err);
         });
@@ -29,24 +29,19 @@ function SetRepoDownloadCounts() {
     Http.send();
 
     Http.onloadend=(e)=> {
-        const json = JSON.parse(Http.responseText).data[0].totalDownloads;
-        console.log("Total NuGet Downloads - " + json);
-        document.getElementById("repo1-details-downloadcount").innerHTML = kFormatter(json) + ' Downloads';
+        const dlCount = JSON.parse(Http.responseText).data[0].totalDownloads;
+        console.log("Total NuGet Downloads - " + dlCount);
+        SetNugetDownloadCountTitle(dlCount);
+        document.getElementById("repo1-details-downloadcount").innerHTML = kFormatter(dlCount) + " Downloads";
     }
 }
 
-function ExpandAllMenus() {
-    document.getElementById('details-education').open = "true";
-    document.getElementById('details-projects').open = "true";
-    document.getElementById('details-experience').open = "true";
-    document.getElementById('details-skills').open = "true";
+function SetNugetDownloadCountTitle(downloadCount) {
+    document.getElementById("repo1-details-downloadcount").title = downloadCount + " Total Downloads";
 }
 
-function CollapseAllMenus() {
-    document.getElementById('details-education').open = "False";
-    document.getElementById('details-projects').open = "False";
-    document.getElementById('details-experience').open = "False";
-    document.getElementById('details-skills').open = "False";
+function showsecretbutton() {
+    document.getElementById('secret-button').style.visibility = "visible";
 }
 
 /*
