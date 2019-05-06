@@ -3,6 +3,7 @@ function LoadDataFromAPIs() {
     SetRepoDownloadCounts();
 }
 
+/* Ugly code :/ */
 function SetRepoStarCounts() {
     const repoName1 = document.getElementById("repoId1").innerHTML;
     const repoName2 = document.getElementById("repoId2").innerHTML;
@@ -40,14 +41,21 @@ function SetNugetDownloadCountTitle(downloadCount) {
     document.getElementById("repo1-details-downloadcount").title = downloadCount + " Total Downloads";
 }
 
-function showsecretbutton() {
-    document.getElementById('secret-button').style.visibility = "visible";
+function SetFavicon() {
+    faviconNumber = RandomInt(2);
+    document.getElementById('favicon').href = "images/favicon-" + faviconNumber + ".png";
+}
+
+function RandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
 }
 
 /*
-Blatantly stolen from: 
-https://stackoverflow.com/questions/9461621/format-a-number-as-2-5k-if-a-thousand-or-more-otherwise-900
+Stolen from: 
+https://stackoverflow.com/q/9461621/6091624
 */
 function kFormatter(num) {
-    return Math.abs(num) > 999 ? Math.sign(num)*((Math.abs(num)/1000).toFixed(1)) + 'k' : Math.sign(num)*Math.abs(num)
+    return Math.abs(num) > 999 ? 
+    Math.sign(num) * ((Math.abs(num)/1000).toFixed(1)) + 'k' : 
+    Math.sign(num) * Math.abs(num);
 }

@@ -5,20 +5,47 @@
 }
 
 body {
-    font-family: /*'Futura',*/ 'Courier New', Courier, monospace;
+    font-family: monospace;
     background-color: #F5F5F5;
     padding-top: 1.3%;
     margin-left: 0%;
+    font-size: 14px
+}
+
+li {
+    text-align: -webkit-match-parent;
 }
 
 mark {
     color: #353735;
-    background-color: #efefef;
+    background-color: #efefef;   
+}
+
+mark:hover {
+    color: #efefef;
+    background-color: #4c4c4c;
 }
 
 mark a {
     text-decoration: none;
-    color: #070c10
+    font-weight: 500;
+    color: #070c10;
+}
+
+mark a:hover {
+    text-decoration: underline;
+    color: #efefef;
+}
+
+a.normal {
+    color: #353735;
+    text-decoration: underline;
+}
+
+a.normal:hover {
+    background-color: #4c4c4c;
+    color: #efefef;
+    text-decoration: underline;
 }
 
 a.footer-links {
@@ -68,6 +95,7 @@ img.li-details-projectinfo {
     height: 10;
     padding-top: .2%;
     padding-left: .5%;
+    vertical-align: middle;
 }
 
 p.li-details-projectinfo {
@@ -79,7 +107,14 @@ p.li-details-projectinfo {
 }
 
 a.mailto-link {
-    color: #353735
+    color: #353735;
+    text-decoration: underline;
+}
+
+a.mailto-link:hover {
+    background-color: #4c4c4c;
+    color: #efefef;
+    text-decoration: underline;
 }
 
 button.toggle-menus {
