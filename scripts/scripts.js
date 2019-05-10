@@ -1,26 +1,42 @@
 function LoadDataFromAPIs() {
+    GetGithubUserData()
+    .then(function whenOk(userData) {
+        document.getElementById('sidebar-profilepic').src = userData.avatar_url;
+    }).catch(function notOk(err) {
+        document.getElementById('sidebar-profilepic').hidden = "true";
+        console.log('GetGithubUserData Failed - ' + err);
+    });
+
     SetRepoStarCounts();
     SetRepoDownloadCounts();
 }
 
-/* Ugly code :/ */
 function SetRepoStarCounts() {
-    const repoName1 = document.getElementById("repoId1").innerHTML;
-    const repoName2 = document.getElementById("repoId2").innerHTML;
-    GetRepoStarCount(repoName1)
-        .then(function whenOk(starCount) {
-            console.log("Setting Star Count for Repo 1. Count = " + starCount);
-            document.getElementById("repo1-details-starcount").innerHTML = starCount;
-        }).catch(function notOk(err){
-            console.log("Get Repo Star Count Failed - " + err);
-        });
-    GetRepoStarCount(repoName2)
-        .then(function whenOk(starCount) {
-            console.log("Setting Star Count for Repo 2. Count = " + starCount);
-            document.getElementById("repo2-details-starcount").innerHTML = starCount;
-        }).catch(function notOk(err){
-            console.log("Get Repo Star Count Failed - " + err);
-        });
+    for (var i = 1; i < 3; i++) {
+        const repoId = "repoId" + i;
+        const repoDetailsForksCount = "repo" + i + "-details-forkscount";
+        const repoDetailsForks = "repo" + i + "-details-forks";
+        const repoDetailsStarCount = "repo" + i + "-details-starcount";
+
+        const repoName = document.getElementById(repoId).innerHTML;
+        GetRepoData(repoName)
+        .then(function whenOk(RepoData) {
+            document.getElementById(repoDetailsStarCount).innerHTML = RepoData.stargazers_count;
+
+            forksCount = RepoData.forks;
+            if (forksCount != 0) {
+                document.getElementById(repoDetailsForksCount).innerHTML = forksCount;
+            } else {
+                document.getElementById(repoDetailsForks).hidden;
+            }
+        }).catch(function notOk(err) {
+            console.log("SetRepoStarCounts Failed-- Name:" + repoName + ", err: " + err);
+        })
+    }
+}
+
+function SetSidebarProfilePicture(url) {
+    document.getElementById('sidebar-profilepic').src = url;
 }
 
 function SetRepoDownloadCounts() {
@@ -31,7 +47,6 @@ function SetRepoDownloadCounts() {
 
     Http.onloadend=(e)=> {
         const dlCount = JSON.parse(Http.responseText).data[0].totalDownloads;
-        console.log("Total NuGet Downloads - " + dlCount);
         SetNugetDownloadCountTitle(dlCount);
         document.getElementById("repo1-details-downloadcount").innerHTML = kFormatter(dlCount) + " Downloads";
     }

@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link id="favicon" rel="shortcut icon" type="image/png" href="images/favicon-png.png">
+        <link id="favicon" rel="shortcut icon" type="image/png" href="assets/images/favicon-png.png">
         <title>Ari Madian</title>
         <meta content="Ari Madian" property="og:title">
         <meta content="akmadian.github.io" property="og:url">
@@ -16,161 +16,142 @@
         <script src="scripts/scripts.js"></script>
         <link rel="stylesheet" type="text/css" href="assets/styles/styles.css">
     </head>
-    <body onload="LoadDataFromAPIs()">
-        <div class="container" id="header">
-            <h1 id="header-name">Ari Madian</h1>
-            <p id="header-summary">
-            18y/o Seattle based CS student<br>
-            C#, Python, Java, JS
-            </p>
-        </div>
-        <div class="btn-group toggle-menus" role="group" id="toggle-menu-buttons" hidden="true">
-            <button type="button" class="btn btn-light btn-sm" onclick="ExpandAllMenus()">Expand All</button>
-            <button type="button" class="btn btn-light btn-sm" onclick="CollapseAllMenus()">Collapse All</button>
-        </div>
-        <div class="container" id="content">
-            <details id="details-education">
-                <summary>
-                    <h2 class="asText">Education</h2>
-                </summary>
-                <ul>
-                    <li>
-                        <strong>South Seattle College</strong> - AS, Computer Science
-                        <br> <p class="li-details-date">2018 - 2020; 3.95 GPA - President's List
-                        </p>
-                        <div class="li-details">
-                            <p>Founded Hour of Code club - Now chairperson<br>and Curriculum Organizer</p>
-                            <p>Phi Theta Kappa Member</p>
-                        </div>
-                    </li>
-                    <li>
-                        <strong>Fife High School</strong>
-                        <br> <p class="li-details-date">2015 - 2018</p>
-                    </li>
-                </ul>
-            </details>
-            <br>
-            <details id="details-projects">
-                <summary>
-                    <h2 class="asText">Projects</h2>
-                </summary>
-                <ul>
-                    <li>
-                        <mark><a href="https://github.com/akmadian/nzxtsharp" id="repoId1">NZXTSharp</a></mark>
-                        - The one-stop SDK for <a href="https://www.nzxt.com/" class="normal">NZXT</a> devices.
+    <body onload="LoadDataFromAPIs();">
+        <div class="container-fluid" id="content">
+            <div class="row">
+            <div class="sidebar col" id="sidebar">
+                <div class="row">
+                    <img id="sidebar-profilepic" width="80%" height="80%" 
+                    style="padding-left: 15%; padding-top:25%; border-radius: 15px !important;" 
+                    alt="My GitHub Profile Picture" src="">
+                </div>
+                <div class="row sidebar-row">
+                    <h1>Ari Madian</h1>
+                </div>
+                <div class="row sidebar-row">
+                    <p>
+                        18 y/o Seattle based CS Student <br>
+                        C#, Python, Java, JS
+                    </p>
+                </div>
+                <div class="row sidebar-row">
+                    <a href="https://mailto:akmadian@gmail.com" class="mailto-link">akmadian@gmail.com</a> <br>
+                </div>
+                <div class="row no-gutters sidebar-row sidebar-image-links">
+                    <div class="col- sidebar-image-links-image">
+                        <div class="footer-img"><a href="https://github.com/akmadian" title="My GitHub"><img src="assets/images/github-logo.svg" alt="GitHub" title="My GitHub" width="35"></a></div>
+                    </div>
+                    <div class="col- sidebar-image-links-image">
+                        <div class="footer-img"><a href="https://www.linkedin.com/in/arimadian/" title="My LinkedIn"><img src="assets/images/linkedin-logo.png" alt="LinkedIn" title="My LinkedIn" width="35"></a></div>
+                    </div>
+                    <div class="col- sidebar-image-links-image">
+                        <div class="footer-img"><a href="https://docs.google.com/document/d/1ChnJl_7vXLYwtVpRUoKm9FjbUgazchImnK3jLbMnbMk/edit?usp=sharing" title="My Resume"><img src="assets/images/resume-logo.png" alt="Resume" title="My Resume" width="25"></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col main-content">
+                <h2>Education</h2>
+                <div class="row">
+                    <div class="col content-card">
+                        <h1><b>South Seattle College</b></h1>
+                        <p style="display: inline;"> - AS, Computer Science</p>
                         <br>
-                        <div>
-                            <img src="assets/images/github-octocons/star.svg" class="li-details-projectinfo">
-                            <p class="li-details-projectinfo" id="repo1-details-starcount" title="GitHub Stargazers"></p>
-                            &centerdot;
-                            <!--
-                                This line is ridiculously long, but breaking it down makes 
-                                a weird line next to the img because of the a tag :/
-                            -->
-                            <a href="https://www.nuget.org/packages/NZXTSharp"><img src="assets/images/nuget-logo.png" class="li-details-projectinfo" width="22"></a>
-                            <p class="li-details-projectinfo" id="repo1-details-downloadcount"></p>
+                        <div class="content-card-details">
+                            <p>2018 - 2020; 3.95 GPA - President's List</p>
+                            <p>Founded Hour of Code club - Now chairperson and Curriculum Organizer</p>
+                            <p>Phi Theta Kappa Menber</p>
                         </div>
-                        <div class="li-details" style="padding-top: .25%">
-                            <p>Designed and built an SDK that facilitates control of NZXT liquid CPU coolers, lighting and fan controllers.</p>
-                            <p>Reverse engineered and documented serial and HID communication protocols.</p>
+                    </div>
+                    <div class="col content-card">
+                        <h1><b>Fife High School</b></h1>
+                        <div class="content-card-details">
+                            <p>2015 - 2018</p>
                         </div>
-                    </li>
-                    <li>
-                        <mark><a href="https://github.com/akmadian/alexacomp" id="repoId2">AlexaComp</a></mark>
-                        - Control your computer with Alexa!
-                        <br>
-                        <div class="li-details-projectinfo">
-                            <img src="assets/images/github-octocons/star.svg" class="li-details-projectinfo">
-                            <p class="li-details-projectinfo" id="repo2-details-starcount" title="GitHub Stargazers"></p>
+                    </div>
+                </div>
+                <br>
+                <h2>Experience</h2>
+                <div class="row">
+                    <div class="col content-card">
+                        <h1><b>Creative Commons</b></h1>
+                        <p style="display:inline;"> - Google Summer of Code Student</p>
+                        <div class="content-card-details">
+                            <p>
+                                May 2019 - Present; &nbsp;
+                                <a href="https://docs.google.com/document/d/1MgVXGX2lKSJJevqGnECIG0_cUeumnEAwE95Y08RMga8/edit?usp=sharing">Proposal</a> &centerdot; 
+                                <a href="assets/GSoC-2019-Acceptance-Letter.pdf">Proof of Acceptance</a>
+                            </p>
+                            <p>Working with Creative Commons to build a new, open source, educational website for CC licenses.</p>
+                            <p>Authored an 11 page technical proposal detailing project implementation, timeline, etc.</p>
+                            <p>Website built with HTML5, CSS, JS, and Bootstrap; MochaJS, and ChaiJS for testing.</p>
                         </div>
-                        <div class="li-details" style="padding-top: .25%">
-                            <p>Built client software with C#, as well as a skill endpoint and a device linking
-                            microservice with AWS Lambda functions running Node.js runtimes.</p>
+                    </div>
+                    <div class="col content-card">
+                        <h1><b>Associated Recreation Council</b></h1>
+                        <p style="display: inline;"> - Enrichment Instructor</p>
+                        <div class="content-card-details">
+                            <p>Jan 2019 - Present &centerdot; 4 mos</p>
+                            <p>
+                                Working with ARC and Alki Community Center to deliver weekly 
+                                after-school enrichment activities to ~10 K-5th graders.
+                            </p>
                         </div>
-                    </li>
-                </ul>
-            </details>
-            <br>
-            <details id="details-experience">
-                <summary>
-                    <h2 class="asText">Experience</h2>
-                </summary>
-                <ul>
-                    <li>
-                        <strong>Google Summer of Code Participant - Creative Commons</strong>
-                        <br>
-                        <span>
-                            <p class="li-details-date">May 2019 - Present</p>;
-                            <a class="normal" href="https://docs.google.com/document/d/1MgVXGX2lKSJJevqGnECIG0_cUeumnEAwE95Y08RMga8/edit?usp=sharing">Proposal</a> &centerdot;
-                            <a class="normal" href="assets/GSoC-2019-Acceptance-Letter.pdf">Proof of Acceptance</a>
-                        </span>
-                        <div class="li-details">
-                            <p>Working with Creative Commons to create a new, open source, educational tool (in the form of a website) for CC licenses.</p>
-                            <p>Authored an 11 page technical proposal, detailing project implementation, timeline, etc.</p>
-                            <p>Website built with HTML5, CSS, JS, and Bootstrap, with MochaJS, and ChaiJS for testing.</p>
+                    </div>
+                </div>
+                <br>
+                <h2>Projects</h2>
+                <div class="row">
+                    <div class="col content-card">
+                        <h1><a href="https://github.com/akmadian/nzxtsharp"><b id="repoId1">NZXTSharp</b></a></h1>
+                        <p style="display: inline;"> - The one-stop SDK for <a href="https://nzxt.com">NZXT</a> devices.</p>
+                        <div class="content-card-details">
+                            <div class="content-card-details-counters">
+                                <span id="repo1-details-stars">
+                                    <img src="assets/images/github-octocons/star.svg">
+                                    <p id="repo1-details-starcount" title="GitHub Stargazers"></p>
+                                </span>
+                                <span id="repo1-details-forks">
+                                    &centerdot;
+                                    <img src="assets/images/github-octocons/repo-forked.svg">
+                                    <p id="repo1-details-forkscount" title="Forks"></p>    
+                                </span>
+                                <span id="repo1-details-downloads">
+                                    &centerdot;
+                                    <a href="https://www.nuget.org/packages/NZXTSharp"><img src="assets/images/nuget-logo.png" width="22"></a>
+                                    <p id="repo1-details-downloadcount"></p>
+                                </span>
+                            </div>
+                            <br>
+                            <p>Designed and built an SDK for NZXT liquid CPU coolers, lighting and fan controllers.</p>
+                            <p>Reverse engineered, documented, and emulated serial and HID communication protocols.</p>
                         </div>
-                    </li>
-                    <li>
-                        <strong>Enrichment Instructor - Associated Recreation Council</strong>
-                        <br> <p class="li-details-date">Jan 1029 - Present &centerdot; 4 mos</p>
-                        <div class="li-details">
-                            <p>Working with ARC and Alki Community Center to deliver weekly after-school enrichment activities to ~10 K-5<sup>th</sup> graders.</p>
+                    </div>
+                    <div class="col content-card">
+                        <h1><a href="https://github.com/akmadian/alexacomp"><b id="repoId2">AlexaComp</b></a></h1>
+                        <p style="display: inline;"> - Control your computer with Alexa!</p>
+                        <div class="content-card-details">
+                            <div class="content-card-details-counters">
+                                <span id="repo2-details-stars">
+                                    <img src="assets/images/github-octocons/star.svg">
+                                    <p id="repo2-details-starcount" title="GitHub Stargazers"></p>
+                                </span>
+                                <span id="repo2-details-forks">
+                                    &centerdot;
+                                    <img src="assets/images/github-octocons/repo-forked.svg">
+                                    <p id="repo2-details-forkscount" title="Forks"></p>    
+                                </span>
+                            </div>
+                            <br>
+                            <p>
+                                Built client software with C#, as well as a skill endpoint and device linking
+                                microservice with AWS Lambda functions on Node.js runtimes.
+                            </p>
                         </div>
-                    </li>
-                    <li hidden>
-                        <strong>Guest Experience Lead - McDonald's</strong>
-                        <br> <p class="li-details-date">Apr 2018 - Jul 2018 &centerdot; 4 mos</p>
-                        <div class="li-details">
-                            <p>Ensured a positive guest experience and provided a helpful face for my location.</p>
-                        </div>
-                    </li>
-                </ul>
-            </details>
-            <br>
-            <details id="details-skills">
-                <summary>
-                    <h2 class="asText">Skills</h2>
-                </summary>
-                <ul>
-                    <li>
-                        <strong>Langs</strong> - C#, Python, JS, Java, HTML, CSS
-                    </li>
-                    <li>
-                        <strong>VC Systems</strong> - Git (and Git Bash)
-                    </li>
-                    <li>
-                        <strong>Tools</strong> - Many IDEs, GitHub, AWS (and CLI), <br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Powershell, RegEx, Bash, Bootstrap
-                        <!--Ugly nbsps :(, I don't know how to do this kind of padding yet...-->
-                    </li>
-                </ul>
-            </details>
+                    </div>
+                </div>
+            </div>
+            </div>
         </div>
-        <!--
-            Bad way to prevent the footer from covering 
-            page content when all menus are expanded
-        -->
-        <br><br><br><br>
-        <footer class="footer">
-            
-                <!--
-                    These lines are ridiculously long, but breaking the lines 
-                    down makes a weird line next to the img because of the a tag :/
-                -->
-            <span style="padding-left: 1%; padding-bottom:1%;">
-                <div class="footer-img"><a href="https://github.com/akmadian" title="My GitHub"><img src="assets/images/github-logo.svg" alt="GitHub" title="My GitHub" width="35"></a></div>
-                <div class="footer-img"><a href="https://www.linkedin.com/in/arimadian/" title="My LinkedIn"><img src="assets/images/linkedin-logo.png" alt="LinkedIn" title="My LinkedIn" width="35"></a></div>
-                <div class="footer-img"><a href="https://docs.google.com/document/d/1ChnJl_7vXLYwtVpRUoKm9FjbUgazchImnK3jLbMnbMk/edit?usp=sharing" title="My Resume"><img src="assets/images/resume-logo.png" alt="Resume" title="My Resume" width="25"></a></div>
-            </span>
-            <!--
-            <span style="float:right">
-                <button type="button" class="btn btn-light" id="secret-button" style="visibility: hidden;" onclick="alert('yay! you found the secret!')">Super Secret Button!</button>
-            </span>
-            -->
-            <span style="float: right; padding-bottom: 1%; padding-right: 2.5%">
-                <a href="mailto:akmadian@gmail.com" class="mailto-link">akmadian@gmail.com</a> <br>
-            </span>
-        </footer>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
