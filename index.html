@@ -16,12 +16,14 @@
         <script src="scripts/scripts.js"></script>
         <link rel="stylesheet" type="text/css" href="assets/styles/styles.css">
     </head>
-    <body onload="LoadDataFromAPIs()">
+    <body onload="LoadDataFromAPIs();">
         <div class="container-fluid" id="content">
             <div class="row">
             <div class="sidebar col" id="sidebar">
                 <div class="row">
-                    <img id="sidebar-profilepic" width="80%" height="80%" style="padding-left: 15%; padding-top:25%; border-radius: 15px !important;" src="">
+                    <img id="sidebar-profilepic" width="80%" height="80%" 
+                    style="padding-left: 15%; padding-top:25%; border-radius: 15px !important;" 
+                    alt="My GitHub Profile Picture" src="">
                 </div>
                 <div class="row sidebar-row">
                     <h1>Ari Madian</h1>
@@ -104,16 +106,20 @@
                         <p style="display: inline;"> - The one-stop SDK for <a href="https://nzxt.com">NZXT</a> devices.</p>
                         <div class="content-card-details">
                             <div class="content-card-details-counters">
-                                <img src="assets/images/github-octocons/star.svg">
-                                <p id="repo1-details-starcount" title="GitHub Stargazers"></p>
+                                <span id="repo1-details-stars">
+                                    <img src="assets/images/github-octocons/star.svg">
+                                    <p id="repo1-details-starcount" title="GitHub Stargazers"></p>
+                                </span>
                                 <span id="repo1-details-forks">
                                     &centerdot;
                                     <img src="assets/images/github-octocons/repo-forked.svg">
                                     <p id="repo1-details-forkscount" title="Forks"></p>    
                                 </span>
-                                &centerdot;
-                                <a href="https://www.nuget.org/packages/NZXTSharp"><img src="assets/images/nuget-logo.png" width="22"></a>
-                                <p id="repo1-details-downloadcount"></p>
+                                <span id="repo1-details-downloads">
+                                    &centerdot;
+                                    <a href="https://www.nuget.org/packages/NZXTSharp"><img src="assets/images/nuget-logo.png" width="22"></a>
+                                    <p id="repo1-details-downloadcount"></p>
+                                </span>
                             </div>
                             <br>
                             <p>Designed and built an SDK for NZXT liquid CPU coolers, lighting and fan controllers.</p>
@@ -125,8 +131,10 @@
                         <p style="display: inline;"> - Control your computer with Alexa!</p>
                         <div class="content-card-details">
                             <div class="content-card-details-counters">
-                                <img src="assets/images/github-octocons/star.svg">
-                                <p id="repo2-details-starcount" title="GitHub Stargazers"></p>
+                                <span id="repo2-details-stars">
+                                    <img src="assets/images/github-octocons/star.svg">
+                                    <p id="repo2-details-starcount" title="GitHub Stargazers"></p>
+                                </span>
                                 <span id="repo2-details-forks">
                                     &centerdot;
                                     <img src="assets/images/github-octocons/repo-forked.svg">

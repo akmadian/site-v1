@@ -3,6 +3,7 @@ function LoadDataFromAPIs() {
     .then(function whenOk(userData) {
         document.getElementById('sidebar-profilepic').src = userData.avatar_url;
     }).catch(function notOk(err) {
+        document.getElementById('sidebar-profilepic').hidden = "true";
         console.log('GetGithubUserData Failed - ' + err);
     });
 
@@ -20,7 +21,6 @@ function SetRepoStarCounts() {
         const repoName = document.getElementById(repoId).innerHTML;
         GetRepoData(repoName)
         .then(function whenOk(RepoData) {
-            console.log(JSON.stringify(RepoData))
             document.getElementById(repoDetailsStarCount).innerHTML = RepoData.stargazers_count;
 
             forksCount = RepoData.forks;
@@ -47,7 +47,6 @@ function SetRepoDownloadCounts() {
 
     Http.onloadend=(e)=> {
         const dlCount = JSON.parse(Http.responseText).data[0].totalDownloads;
-        console.log("Total NuGet Downloads - " + dlCount);
         SetNugetDownloadCountTitle(dlCount);
         document.getElementById("repo1-details-downloadcount").innerHTML = kFormatter(dlCount) + " Downloads";
     }

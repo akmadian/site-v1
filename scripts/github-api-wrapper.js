@@ -1,5 +1,5 @@
 function GetRepoStarCount(repoName) {
-    return new Promise(function(resolve, reject){
+    return new Promise(function(resolve, reject) {
         const Http = new XMLHttpRequest();
         const url = 'https://api.github.com/repos/akmadian/' + repoName;
         Http.open("GET", url);
@@ -13,7 +13,7 @@ function GetRepoStarCount(repoName) {
 }
 
 function GetRepoData(repoName) {
-    return new Promise(function(resolve, reject){
+    return new Promise(function(resolve, reject) {
         const Http = new XMLHttpRequest();
         const url = 'https://api.github.com/repos/akmadian/' + repoName;
         Http.open("GET", url);
@@ -27,7 +27,7 @@ function GetRepoData(repoName) {
 }
 
 function GetGithubUserData() {
-    return new Promise(function(resolve, reject){
+    return new Promise(function(resolve, reject) {
         const Http = new XMLHttpRequest();
         const url = 'https://api.github.com/users/akmadian';
         Http.open("GET", url);
