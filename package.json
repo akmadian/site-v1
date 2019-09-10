@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "name": "akmadian.github.io",
+  "license": "MIT",
+  "scripts": {
+    "dev": "saber",
+    "build": "saber build"
+  },
+  "devDependencies": {
+    "saber": "^0.6.10",
+    "saber-theme-portfolio": "^0.2.1",
+    "saber-plugin-query-posts": "^0.3.2",
+    "saber-plugin-feed": "^0.3.4"
+  }
+}
