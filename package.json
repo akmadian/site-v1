@@ -1,15 +1,15 @@
 {
-  "private": true,
   "name": "akmadian.github.io",
-  "license": "MIT",
+  "version": "1.0.0",
+  "description": "## Scripts",
+  "main": "index.js",
   "scripts": {
-    "dev": "saber",
-    "build": "saber build"
+    "build-css": "node-sass --omit-source-map-url src/styles/bulma.scss src/styles/styles.css"
   },
-  "devDependencies": {
-    "saber": "^0.6.10",
-    "saber-theme-portfolio": "^0.2.1",
-    "saber-plugin-query-posts": "^0.3.2",
-    "saber-plugin-feed": "^0.3.4"
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bulma": "^0.7.5",
+    "node-sass": "^4.12.0"
   }
 }

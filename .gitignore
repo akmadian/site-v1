@@ -2,6 +2,5 @@ node_modules
 *.log
 .DS_Store
 
-# Saber output
-public
-.saber
+src/styles/*.css
+src/styles/*.map
