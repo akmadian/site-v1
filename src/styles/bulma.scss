@@ -7,9 +7,6 @@ $button-hover-border-color: $dark-grey;
 
 $navbar-background-color: $transparent;
 
-$footer-background-color: $gold-dark;
-$footer-padding: 0;
-
 .navbar-item p {
     margin-right: 1rem;
     color: $scheme2-medium;
@@ -17,10 +14,6 @@ $footer-padding: 0;
 
 .navbar-item a {
     margin-top: 0 !important
-}
-
-.footer {
-    height: 110px;
 }
 
 @import "../../node_modules/bulma/sass/utilities/_all.sass";

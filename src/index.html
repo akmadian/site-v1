@@ -3,13 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Ari Madian</title>
+        <title>Ari Madian | Software Engineer</title>
         <link rel="stylesheet" href="styles/styles.css">
         <link rel="stylesheet" href="styles/bulma.css">
         <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     </head>
     <body>
-        <div id="socials-links">
+        <div id="socials-links" class="is-hidden-mobile" hidden>
             <ul>
                 <li>
                     <a href="#"><i class="fab fa-github onhover-gold"></i></a>
@@ -23,7 +23,7 @@
             </ul>
         </div>
         <div id="landing-view">
-            <nav class="navbar" role="navigation" aria-label="main navigation">
+            <nav class="navbar nunito-font" role="navigation" aria-label="main navigation">
                 <div class="navbar-end">
                     <div class="navbar-item">
                         <p><a href="#">contact me</a> - akmadian@gmail.com</p>
@@ -34,22 +34,32 @@
                 </div>
             </nav>
             <div id="hero">
-                <h1 style="font-weight: 400">I'm Ari Madian -</h1>
+                <h1 style="font-weight: 400">Hey! I'm Ari Madian -</h1>
                 <h1>A Freelance Software Engineer.</h1>
-                <a href="#contact">let's work together</a>
-                <a href="#">take a look at my resume</a>
+                <div id="hero-links" class="nunito-font">
+                    <a href="#contact">let's work together</a>
+                    <a href="#">take a look at my resume</a>
+                </div>
+                <span></span>
             </div>
         </div>
         <div id="main-content">
-            <div id="about">
+            <div id="about" class="nunito-font">
                 <h1>About Me</h1>
-                <p class="catamaran-font">
-                    Hey! I'm Ari Madian - a freelance software developer living in West Seattle.
-                    I am 19 years old, and I have been programming for over 3 years.
+                <p>
+                    I'm Ari Madian - a freelance software developer based in Seattle.
+                    I am 19 years old, and I have been programming for four years.
                     I mostly work in desktop app and full stack web development,
                     and I am currently studying Computer Science at South Seattle College.
                 </p>
-                <div id="skills" class="catamaran-font">
+                <p>
+                    I recently finished up a software development internship with <a href="https://creativecommons.org">Creative Commons</a>,
+                    a position I attained through <a href="https://g.co/gsoc">Google's Summer of Code Program</a>.
+                    In which I designed and built a modern, usable version of their license chooser tool.
+                </p>
+                <p>Google Summer of Code Stuff</p>
+                <a href="#">project proposal</a> | <a href="#">proof of program completion</a>
+                <div id="skills" class="catamaran-font" hidden>
                     <p>Stuff I'm Good At</p>
                     <div class="columns">
                         <div class="column is-3">
@@ -71,43 +81,73 @@
                     </div>
                 </div>
             </div>
-            <div id="works">
-                <h1>Stuff I've Made</h1>
-
-            </div>
-            <div id="mywork" hidden>
-                <b>EXPERIENCE</b>
-                <hr class="mini-gold">
-                <div class="work">
+            <div id="works" class="nunito-font">
+                <h2>Stuff I've Made</h2>
+                <div class="project" id="project-0">
                     <div class="columns">
-                        <div class="column is-8">
-                            <div class="positon-details">
-                                <p class="serif-font">
-                                    <b class="sansserif-font">Creative Commons</b>
-                                        - Intern, Google Summer of Code <br>
-                                    May 2019 - August 2019
-                                </p>
-                                [<a href="#" class="anim_link-underline">Proposal</a>]
-                                [<a href="#" class="anim_link-underline">Proof of Completion</a>]
+                        <div class="column is-3">
+                            <b>Creative Commons</b>
+                            <p>License Chooser</p>
+                        </div>
+                        <div class="column is-6 is-paddingless">
+                            <img src="img/chooser.PNG" alt="">
+                        </div>
+                    </div>
+                    <div class="columns">
+                        <div class="column is-6">
+                            <a href="#"><object data="img/svg/star.svg" type="image/svg+xml"></object>3 Stars</a> |
+                            <a href="#"><img src="img/svg/git-branch.svg" alt="">2 Forks</a> | 
+                            <a href="#">source code</a> |
+                            <a href="#">live site</a>
+                        </div>
+                        <div class="stack column is-3">
+                            <div class="is-pulled-right">
+                                <p>Vue.js</p> |
+                                <p>Bulma</p>
                             </div>
                         </div>
-                        <div class="column work_stats-col">
-                            <b>cc-chooser</b><br>
-                            [<a href="#" class="anim_link-underline">Live</a>]
-                            [<a href="#" class="anim_link-underline">Source</a>]<br>
-                            <i class="fas fa-star"></i><p>20</p><br>
-                            <i class="fas fa-code-branch"></i><p>2</p>
+                    </div>
+                </div>
+                <div class="project" id="project-1">
+                    <div class="columns">
+                        <div class="column is-3">
+                            <b>The Underrepresentation Curriculum Project</b>
+                            <p>Brand Website</p>
+                        </div>
+                        <div class="column is-6 is-paddingless">
+                            <img src="img/underrep.PNG" alt="">
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            <a href="#">source code</a> |
+                            <a href="#">live site</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="columns">
+                        <div class="column">
+                            <b>NZXTSharp</b>
+                            <p>The one-stop C# SDK for NZXT PC components.</p>
+                        </div>
+                        <div class="column is-pulled-right">
+                                <a href="#"><img src="img/svg/star.svg" alt="">3 Stars</a> |
+                                <a href="#"><img src="img/svg/git-branch.svg" alt="">2 Forks</a> | 
+                                <a href="#"><svg xmlns="img/nuget.svg" class="nuget-logo"></svg>2k downloads</a> |
+                                <a href="#">source code</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="contact">
+            <div id="contact" class="nunito-font">
                 <h1>Interested in working with me?</h1>
                 <p>
-                    Write to me directly - <a href="mailto:akmadian@gmail.com" class="grey-link anim_link-underline">akmadian@gmail.com</a>,
+                    Write to me directly - <a href="mailto:akmadian@gmail.com">akmadian@gmail.com</a>,
                     or use the contact form below. I will try to respond within 24 hours.
                 </p>
             </div>
+            <p class="page-footer nunito-font">designed and built by Ari Madian</p>
         </div>
     </body>
 </html>

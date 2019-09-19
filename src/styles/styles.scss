@@ -1,9 +1,11 @@
 @import url("./bulma.scss");
 @import "./colors.scss";
 @import "./animations.scss";
+@import "./iframe-embed.scss";
 @import url("https://fonts.googleapis.com/css?family=Playfair+Display&display=swap");
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Manjari|Montserrat|Nunito+Sans|Work+Sans&display=swap');
 
 .serif-font {
     font-family: 'Courier New', Courier, monospace;
@@ -15,6 +17,10 @@
 
 .catamaran-font {
     font-family: 'Catamaran', sans-serif;
+}
+
+.nunito-font {
+    font-family: 'Nunito Sans', sans-serif;
 }
 
 hr.mini-gold {
@@ -29,91 +35,154 @@ html {
 }
 
 body {
-    background-color: $scheme2-dark;
+    background-color: #FFF;
     margin: 0;
-    color: #FFF !important;
+    color: $scheme2-dark !important;
 }
 
 h1 {
     font-weight: 300;
 }
 
+#hero {
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 30vh;
+
+    h1 {
+        font-weight: 200;
+        font-size: 70px;
+        word-wrap: break-word;
+        margin-top: 0;
+        margin-bottom: .4rem;
+        line-height: 1;
+    }
+
+    a {
+        margin-left: 2rem;
+    }
+
+    span {
+        position: absolute;
+        bottom: 25px;
+        left: 50%;
+        width: 24px;
+        height: 24px;
+        margin-left: -12px;
+        border-left: 1px solid $scheme2-medium;
+        border-bottom: 1px solid $scheme2-medium;
+        transform: rotate(-45deg);
+        box-sizing: border-box;
+        animation: scrollArrowBounce 2s 1;
+    }
+}
+
 #main-content {
-    width: 50%;
+    width: 60%;
     margin: 0 auto;
     font-family: 'Muli', sans-serif;
     font-size: 1.1rem;
+
+    h1 {
+        font-size: 50px;
+        line-height: 1;
+    }
+
+    h2 {
+        font-size: 45px;
+        line-height: 1;
+        font-weight: 300;
+    }
 }
 
 #landing-view {
     min-height: 100vh;
 }
 
-#hero {
-    width: 60%;
-    margin: 0 auto;
-    margin-top: 30vh;
-}
-
-#hero h1 {
-    font-weight: 200;
-    font-size: 70px;
-    word-wrap: break-word;
-    margin-top: 0;
-    margin-bottom: .4rem;
-    line-height: 1;
+#hero-links {
+    margin-top: 2rem;
 }
 
 a {
-    display: inline-block;
-    margin-top: 1rem;
-    margin-left: 2rem;
-    color: #FFF !important;
+    display: inline;
+    color: $scheme2-dark !important;
     padding: .3rem;
     font-weight: 500;
     width: auto;
-    text-decoration: underline;
+    text-decoration: underline !important;
 }
 
 a:hover {
-    background-color: #FFF;
-    color: $scheme2-dark !important;
+    background-color: $scheme2-dark;
+    color: #FFF !important;
     -webkit-animation-name: linkBackFade;
     -webkit-animation-duration: .3s;
     animation-name: linkBackFade;
     animation-duration: .3s;
 }
 
+.a-invis {
+    background-color: $transparent;
+}
+
+.a-invis:hover {
+    background-color: $transparent !important;
+}
+
 #about {
     padding: 3rem 0;
-    margin-bottom: 15rem;
+    margin-bottom: 8rem;
+
+    a {
+        padding: 0rem;
+    }
+    
+    p {
+        width: 85%;
+        font-weight: 100;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: $scheme2-medium;
+    }
 }
 
-#about h1 {
-    font-size: 50px;
-    line-height: 1;
+.project {
+    margin-bottom: 10rem;
+
+    img {
+        border-radius: 4px;
+    }
+
+    svg {
+        vertical-align: middle;
+        margin-right: .2rem;
+    }
+
+    a {
+        font-size: 14px;
+    }
 }
 
-#about p {
-    width: 75%;
-    font-weight: 100;
-    font-size: 1.3rem;
-    line-height: 1.8;
+.stack p {
+    display: inline;
+    font-size: 14px;
 }
 
-#skills p {
-    margin-bottom: .4rem;
-    font-weight: 400;
-}
+#skills {
+    p {
+        margin-bottom: .4rem;
+        font-weight: 400;
+    }
 
-#skills ul {
-    margin-top: 0px;
-}
+    ul {
+        margin-top: 0px;
+    }
 
-#skills li {
-    font-weight: 100;
-    font-size: 1.1rem;
-    line-height: 1.3;
+    li {
+        font-weight: 100;
+        font-size: 1.1rem;
+        line-height: 1.3;
+    }
 }
 
 #work h1 {
@@ -129,52 +198,99 @@ a:hover {
     position: fixed;
     bottom: 0px;
     left: 40px;
-}
 
-#socials-links ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    list-style: none;
-    padding: 0px;
-    margin: 0px;
-}
+    ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+    }
 
-#socials-links ul::after {
-    content: "";
-    display: block;
-    width: 1px;
-    height: 110px;
-    background-color: $dark-grey;
-    margin: 0 auto;
-}
+    ul::after {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 110px;
+        background-color: #FFF;
+        margin: 0 auto;
+    }
 
-#socials-links li {
-    width: 1.3rem;
-    height: auto;
-    margin-bottom: 1rem;
-}
+    li {
+        width: 1.3rem;
+        height: auto;
+        margin-bottom: 1rem;
+    }
+    
+    svg, a {
+        width: 1.3rem;
+        height: auto;
+    }
 
-#socials-links svg, #socials-links a {
-    width: 1.3rem;
-    height: auto;
-}
-
-#socials-links a:hover > svg {
-    -webkit-animation-name: linkColorFade;
-    -webkit-animation-duration: .3s;
-    animation-name: linkColorFade;
-    animation-duration: .3s;
-    fill: $gold;
-    color: $gold;
+    a:hover > svg {
+        -webkit-animation-name: linkColorFade;
+        -webkit-animation-duration: .3s;
+        animation-name: linkColorFade;
+        animation-duration: .3s;
+        fill: $gold;
+        color: $gold;
+    }
 }
 
 #contact {
     padding-bottom: 20rem;
+
+    p {
+        color: $scheme2-medium;
+        width: 60%;
+        font-size: 1.3rem;
+    }
 }
 
-#contact p {
-    color: $scheme2-medium;
-    width: 60%;
-    font-size: 1.3rem;
+.nuget-logo {
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    margin-top: -4px;
+    margin-right: .3rem;
+    fill: #000;
+}
+
+.page-footer {
+    text-align: center;
+    font-size: 14px;
+    color: $scheme2-medium
+}
+
+@media only screen and (max-width: 375px) {
+    #hero {
+        margin-left: 2rem;
+        margin-right: 0px;
+        width: 100%;
+
+        h1 {
+            font-size: 34px;
+        }
+
+        a {
+            font-size: 14px;
+            margin-left: 1rem;
+        }
+    }
+
+    #main-content {
+        width: 96%;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+     
+    #about {
+        margin-bottom: -2rem;
+
+        p {
+            width: 100%;
+            font-size: 15px;
+        }
+    }
 }
