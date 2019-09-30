@@ -1,0 +1,25 @@
+@charset "utf-8";
+@import "./colors.scss";
+
+$button-border-color: $gold;
+$button-background-color: $transparent;
+$button-hover-border-color: $dark-grey;
+
+$navbar-background-color: $transparent;
+
+.navbar-item p {
+    margin-right: 1rem;
+    color: $scheme2-medium;
+}
+
+.navbar-item a {
+    margin-top: 0 !important
+}
+
+@import "../../node_modules/bulma/sass/utilities/_all.sass";
+@import "../../node_modules/bulma/sass/grid/_all.sass";
+@import "../../node_modules/bulma/sass/base/generic.sass";
+@import "../../node_modules/bulma/sass/base/helpers.sass";
+@import "../../node_modules/bulma/sass/layout/_all.sass";
+@import "../../node_modules/bulma/sass/elements/button.sass";
+@import "../../node_modules/bulma/sass/components/navbar.sass";
