@@ -1,20 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Ari Madian | Software Engineer</title>
+        <link href="./static/logo.png" rel="icon"  type="image/x-icon" />
     </head>
     <body>
         <div id="landing-view">
-            <nav class="flex" role="navigation" aria-label="main navigation">
-                <div class="object-right-top">
-                    <div>
-                        <a href="#">contact me</a> - akmadian@gmail.com
-                        <a href="https://github.com/akmadian">github</a>
-                        <a href="#">linkedin</a>
-                        <a href="#">resume</a>
+            <nav class="navbar" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                    <a class="navbar-item no-anim" href="#">
+                        <img src="./static/logo.svg" width="112" height="28">
+                    </a>
+                      
+                    <a role="button" class="navbar-burger burger no-anim" aria-label="menu" aria-expanded="false" data-target="navbar">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+                      
+                <div id="navbar" class="navbar-menu">
+                    <div class="navbar-end">
+                        <a class="navbar-item no-anim">
+                            contact me
+                        </a>
+                        <a class="navbar-item no-anim">
+                            github
+                        </a>
+                        <a class="navbar-item no-anim">
+                            linkedin
+                        </a>
+                        <a class="navbar-item no-anim">
+                            resume
+                        </a>
                     </div>
                 </div>
             </nav>
@@ -33,14 +54,18 @@
                 <h1>About Me</h1>
                 <p>
                     <br>
-                    I'm Ari Madian - a freelance software developer based in Seattle.
+                    I'm Ari Madian - a freelance software engineer based in Seattle.
                     I am 19 years old, and I have been programming for four years.
                     I mostly work in desktop app and web development (mostly front end, but I am also proficient in full stack),
                     and I am currently studying Computer Science at South Seattle College. 
-                    <br><br>
+                    <br>
                     I recently finished up a software development internship with <a href="https://creativecommons.org">Creative Commons</a>,
                     a position I attained through <a href="https://g.co/gsoc">Google's Summer of Code Program</a>.
-                    In which I designed and built a modern, usable version of their license chooser tool. <br><br>
+                    In which I designed and built a modern, usable version of their license chooser tool. 
+                    <br><br>
+                    Outside of programming, I am an avid tea enthusiast, and I enjoy cataloguing, rating, and recording tasting 
+                    notes, among other data, about each tea I try. I also enjoy movies and TV shows; some favorites are Breaking Bad and The Godfather, 
+                    among others.
                 </p>
                 <!--<p>Google Summer of Code Stuff</p>
                 <a href="#">project proposal</a> | <a href="#">proof of program completion</a>-->
@@ -208,7 +233,7 @@
                 <a href="#">linkedin</a>
                 <a href="#">resume</a>
             </div>
-            <p class="page-footer nunito-font">designed and built by Ari Madian</p>
+            <p class="page-footer nunito-font">designed and built by Ari Madian | colors by<a href="#">solarized</a>.</p>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.0.2/dist/simpleParallax.min.js">
         </script>

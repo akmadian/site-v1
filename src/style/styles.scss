@@ -32,11 +32,13 @@ hr.mini-gold {
 
 html {
     scroll-behavior: smooth;
-
 }
 
+html, .dark { @include rebase($base03,$base02,$base01,$base00,$base0,$base1,$base2,$base3) }
+.light { @include rebase($base3,$base2,$base1,$base0,$base00,$base01,$base02,$base03)}
+
 body {
-    background-color: #FFF;
+    background-color: $base02;
     margin: 0;
     color: $scheme2-dark !important;
     font-family: 'Nunito Sans', sans-serif;
@@ -53,7 +55,7 @@ h1 {
 
     h1 {
         font-weight: 200;
-        font-size: 90px;
+        font-size: 70px;
         word-wrap: break-word;
         margin-top: 0;
         margin-bottom: .4rem;
@@ -79,7 +81,7 @@ h1 {
     }
 
     #name {
-        color: $scheme3-1_sat-boost;
+        color: $magenta;
     }
 
     .subtitle {
@@ -115,16 +117,25 @@ h1 {
 
 a {
     display: inline;
-    color: $scheme2-dark !important;
+    color: $magenta !important;
     padding: .3rem;
     font-weight: 500;
     width: auto;
     text-decoration: underline !important;
 
     &:hover {
-        background-color: $scheme3-1_sat-boost;
+        background-color: $magenta;
         color: #FFF !important;
         animation: linkBackFade .25s;
+    }
+
+    &.no-anim {
+        animation: none !important;
+
+        &:hover {
+            background-color: transparent;
+            color: $magenta;
+        }
     }
 }
 
@@ -181,7 +192,7 @@ a {
         }
 
         b {
-            color: $scheme3-1_sat-boost;
+            color: $magenta;
             font-weight: 700;
             font-size: 24px;
         }
