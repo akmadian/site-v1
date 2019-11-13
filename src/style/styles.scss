@@ -1,34 +1,23 @@
 @import "./bulma.scss";
 @import "./colors.scss";
 @import "./animations.scss";
-@import "./iframe-embed.scss";
 /*
 @import url("https://fonts.googleapis.com/css?family=Playfair+Display&display=swap");
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400&display=swap');*/
 @import url('https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,500,600,700&display=swap');
 
-.serif-font {
-    font-family: 'Courier New', Courier, monospace;}
-
-.sansserif-font {
-    font-family: 'Muli', sans-serif;
-}
-
-.catamaran-font {
-    font-family: 'Catamaran', sans-serif;
-}
-
 .nunito-font {
     font-family: 'Nunito Sans', sans-serif;
 }
 
+/*
 hr.mini-gold {
     width: 60px;
     height: 0px;
     border: 1px solid $scheme2-medium;
     margin-top: .5rem;
-}
+}*/
 
 html {
     scroll-behavior: smooth;
@@ -38,9 +27,8 @@ html, .dark { @include rebase($base03,$base02,$base01,$base00,$base0,$base1,$bas
 .light { @include rebase($base3,$base2,$base1,$base0,$base00,$base01,$base02,$base03)}
 
 body {
-    background-color: $base02;
+    background-color: $base03 !important;
     margin: 0;
-    color: $scheme2-dark !important;
     font-family: 'Nunito Sans', sans-serif;
 }
 
@@ -73,8 +61,8 @@ h1 {
         width: 24px;
         height: 24px;
         margin-left: -12px;
-        border-left: 2px solid $scheme3-0;
-        border-bottom: 2px solid $scheme3-0;
+        //border-left: 2px solid $scheme3-0;
+        //border-bottom: 2px solid $scheme3-0;
         transform: rotate(-45deg);
         box-sizing: border-box;
         animation: scrollArrowBounce 2s 2;
@@ -92,35 +80,127 @@ h1 {
 #main-content {
     width: 60%;
     margin: 0 auto;
-    font-family: 'Muli', sans-serif;
+    margin-top: 20rem;
+    font-family: 'Nunito Sans', sans-serif;
     font-size: 1.1rem;
 
     h1 {
-        font-size: 50px;
-        line-height: 1;
+        font-size: 4.5rem;
     }
+    
+    #bio {
+        width: 60%;
+    }    
 
-    h2 {
-        font-size: 45px;
-        line-height: 1;
-        font-weight: 300;
+    a {
+        font-weight: bold ;
     }
 }
 
+#socials {
+    /*
+    a {
+        margin-right: .3rem;
+        color: $red !important;
+        font-weight: bold;
+    }*/
+}
+
+#boring-link {
+    input[type='checkbox'] {
+        display: none;
+    }
+
+    .wrap-collabsible {
+        margin-bottom: 1.2rem 0;
+    }
+      
+    input[type='checkbox'] {
+        display: none;
+    }
+      
+    .lbl-toggle {
+        display: block;
+        font-size: .8rem;
+      
+        padding: 1rem;
+        color: $magenta;
+      
+        cursor: pointer;
+      
+        border-radius: 7px;
+        transition: all 0.25s ease-out;
+    }
+      
+    /* Little arrow to the left of the text */
+    .lbl-toggle::before {
+        content: ' ';
+        display: inline-block;
+      
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-left: 5px solid currentColor;
+        vertical-align: middle;
+        margin-right: .7rem;
+        transform: translateY(-2px);
+      
+        transition: transform .2s ease-out;
+    }
+      
+    .toggle:checked + .lbl-toggle::before {
+        transform: rotate(90deg) translateX(-3px);
+    }
+      
+    .collapsible-content {
+        max-height: 0px;
+        overflow: hidden;
+        transition: max-height .25s ease-in-out;
+        margin-left: 2rem;
+        width: 70%;
+        font-size: .8rem;
+
+        p {
+            font-size: .9rem;
+            margin-top: 0px;
+        }
+
+        a {
+            margin-left: .3rem;
+        }
+    }
+      
+    .toggle:checked + .lbl-toggle + .collapsible-content {
+        max-height: 350px;
+    }
+
+    .desktop-float-left {
+        float: left;
+    }
+
+    .boring-item {
+        margin-bottom: .5rem;
+
+        p {
+            display: inline;
+        }
+    }
+}
+/*
 #landing-view {
     min-height: 100vh;
 }
 
 #hero-links {
     margin-top: 2rem;
-}
-
+}*/
+/*
 a {
     display: inline;
     color: $magenta !important;
     padding: .3rem;
+    padding-right: 0px;
+    padding-left: 0px;
     font-weight: 500;
-    width: auto;
     text-decoration: underline !important;
 
     &:hover {
@@ -137,8 +217,8 @@ a {
             color: $magenta;
         }
     }
-}
-
+}*/
+/*
 .a-invis {
     background-color: $transparent;
     animation: none;
@@ -378,7 +458,7 @@ a {
         color: $gold;
     }
 }
-/*
+
 #contact {
     padding-bottom: 20rem;
 
@@ -417,7 +497,7 @@ a {
         }
     }
 }*/
-
+/*
 #contact {
     margin-left: 5%;
     margin-right: 20%;
@@ -467,15 +547,75 @@ a {
 
 svg.nuget-logo {
     fill: #000;
-}
+}*/
 
 .page-footer {
     text-align: center;
     font-size: 14px;
-    color: $scheme2-medium
+    //color: $scheme2-medium;
+    position: absolute;
+    bottom: 0rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@media only screen and (min-width: 2160px) {
+    #main-content {
+        font-size: 3.4rem;
+
+        h1 {
+            font-size: 15rem;
+        }
+
+        #bio {
+            width: 80%;
+        }
+    }
+
+    #boring-link {
+        font-size: 3.5rem;
+
+        .lbl-toggle {
+            font-size: 2.7rem;
+        }
+
+        /* Little arrow to the left of the text */
+        .lbl-toggle::before {
+            content: ' ';
+            display: inline-block;
+        
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            border-left: 15px solid currentColor;
+            vertical-align: middle;
+            margin-right: 1.5rem;
+            transform: translateY(-2px);
+        
+            transition: transform .2s ease-out;
+        }
+
+        .collapsible-content {
+            width: 95%;
+        }
+
+        .content-inner {
+            font-size: 2.2rem;
+        }
+
+        .boring-item {
+            p {
+                font-size: 2.2rem;
+            }
+        }
+
+        .toggle:checked + .lbl-toggle + .collapsible-content {
+            max-height: 100rem;
+        }
+    }
 }
 
 @media only screen and (max-width: 375px) {
+    /*
     #hero {
         margin-left: 2rem;
         margin-right: 0px;
@@ -489,14 +629,65 @@ svg.nuget-logo {
             font-size: 14px;
             margin-left: 1rem;
         }
+    }*/
+    .hide-mobile {
+        display: none;
     }
 
     #main-content {
         width: 96%;
         margin-left: 2%;
         margin-right: 2%;
+        margin-top: 0rem;
+        font-size: 1rem;
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 0rem;
+        }
+
+        #bio {
+            width: 95%;
+            margin: 0 auto;
+        }
     }
      
+    #socials {
+        margin-bottom: 1rem;
+        margin-left: .5rem;
+    }
+
+    #boring-link {
+        .collapsible-content {
+            p {
+                display: block;
+                margin-bottom: 0px;
+            }
+
+            a {
+                display: block;
+            }
+        }
+
+        .toggle:checked + .lbl-toggle + .collapsible-content {
+            max-height: 100rem;
+        }
+
+        .desktop-float-left {
+            float: none;
+        }
+
+        .boring-item {
+            div {
+                margin-left: .5rem;
+            }
+        }
+    }
+
+    .page-footer {
+
+    }
+    /*
     #about {
         margin-bottom: -2rem;
 
@@ -504,5 +695,5 @@ svg.nuget-logo {
             width: 100%;
             font-size: 15px;
         }
-    }
+    }*/
 }

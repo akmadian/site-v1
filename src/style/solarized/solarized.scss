@@ -14,6 +14,64 @@ $violet:    #6c71c4;
 $blue:      #268bd2;
 $cyan:      #2aa198;
 $green:     #859900;
+$transparent: rgba(0, 0, 0, 0);
+
+.color-cyan {
+
+    color: $cyan !important;
+    padding: .3rem;
+    padding-left: 0px;
+    padding-right: 0px;
+    font-weight: bold !important;
+    text-decoration: underline !important;
+
+    &:hover {
+        background-color: $cyan !important;
+        color: #FFF !important;
+        animation: fade .25s;
+    }
+
+    @keyframes fade {33
+        from {
+            background-color: $transparent;
+            color: $cyan !important;
+        }
+        to {
+            background-color: $cyan !important;
+            color: #FFF;
+        }
+    }
+}
+
+@mixin linkBase($color) {
+    padding: .3rem;
+    padding-left: 0px;
+    padding-right: 0px;
+    font-weight: bold;
+    text-decoration: underline !important;
+
+    a:hover {
+        background-color: $color;
+        color: #FFF !important;
+        animation: linkBackFade .25s;
+    }
+}
+
+@mixin fade($color) {
+    #{$property}: $color;
+
+    @keyframes linkBackFade {
+        from {
+            background-color: $transparent;
+            color: $color !important;
+        }
+        to {
+            background-color: $color !important;
+            color: #FFF;
+        }
+    }
+}
+
 @mixin rebase($rebase03,$rebase02,$rebase01,$rebase00,$rebase0,$rebase1,$rebase2,$rebase3) 
 {
     background-color:$rebase03;
