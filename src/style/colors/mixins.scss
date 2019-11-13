@@ -1,0 +1,49 @@
+@mixin linkBase($color) {
+    color: $color !important;
+    text-decoration: underline;
+
+    @at-root h1#{&} {
+        text-decoration: none !important;
+    }
+
+    @at-root path#{&} {
+        fill: $color;
+        color: $color;
+    }
+
+    @at-root a#{&} {
+        padding: 0;
+        font-weight: bold;
+
+        &:hover {
+            background-color: $color;
+            color: #FFF !important;
+            animation: linkBackFade .25s;
+        }    
+    }
+
+    @at-root sup#{&} {
+        text-decoration: none;
+    }
+
+    &.nohover {
+        text-decoration: none !important;
+
+        &:hover {
+            text-decoration: none !important;
+            background-color: $transparent !important;
+            animation: none !important;
+        }
+    }
+
+    @keyframes linkBackFade {
+        from {
+            background-color: $transparent;
+            color: $color !important;
+        }
+        to {
+            background-color: $color !important;
+            color: #FFF;
+        }
+    }
+}

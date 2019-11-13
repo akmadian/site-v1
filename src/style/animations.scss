@@ -1,4 +1,4 @@
-@import "./colors.scss";
+@import "./colors/colors.scss";
 /*
 @keyframes linkColorFade {
     from { 
@@ -31,6 +31,15 @@
     }
     40% {
         -webkit-transform: rotate(-45deg) translate(0, 0);
+    }
+}
+
+@keyframes opacityFade {
+    from {
+        filter: opacity(.4);
+    }
+    to {
+        filter: opacity(1);
     }
 }
 
