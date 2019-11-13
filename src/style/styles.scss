@@ -37,6 +37,7 @@ h1 {
     flex: 1 0 auto;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 1.1rem;
+    max-width: 1800px;
     
     #bio {
         width: 60%;
@@ -164,50 +165,50 @@ footer {
 }
 
 // 4k
-@media only screen and (min-width: 2160px) {
+@media only screen and (min-width: 3840px) {
     #main-content {
-        font-size: 2.5rem;
+        font-size: 2.7rem;
+        height: calc(100% - 10rem);
 
         h1 {
-            font-size: 15rem;
+            font-size: 10rem;
         }
 
         #bio {
-            width: 80%;
+            width: 90%;
+        }
+
+        #socials {
+            font-size: 3.2rem;
         }
     }
 
     #boring-link {
-        font-size: 2.2rem;
+        font-size: 3rem;
 
         .lbl-toggle {
-            font-size: 2rem;
+            font-size: 2.5rem;
         }
 
         .lbl-toggle::before {
-            content: ' ';
-            display: block;
-        
             border-top: 15px solid transparent;
             border-bottom: 15px solid transparent;
             border-left: 15px solid currentColor;
             margin-right: 1.5rem;
-            transform: translateY(-2px);
-        
-            transition: transform .2s ease-out;
         }
 
         .collapsible-content {
             width: 95%;
+            margin-left: 3.5rem;
         }
 
         .content-inner {
-            font-size: 2.2rem;
+            font-size: 2rem;
         }
 
         .boring-item {
             p {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
         }
 
@@ -217,12 +218,143 @@ footer {
     }
 
     footer {
-        font-size: 2.1rem;
+        font-size: 2.3rem;
+        margin-top: -3rem;
+
+        p {
+            font-size: 1.8rem;
+        }
 
         svg {
-            height: 3rem;
-            width: 3rem;
+            height: 4rem;
+            width: 4rem;
         }
+    }
+
+    #logo {
+        height: 4rem;
+    }
+}
+
+@media only screen and (max-width: 2160px) {
+    #main-content {
+        font-size: 1.5rem;
+
+        h1 {
+            font-size: 6.5rem;
+        }
+
+        #bio {
+            width: 75%;
+        }
+    }
+
+    #boring-link {
+        font-size: 3rem;
+
+        .lbl-toggle {
+            font-size: 1.3rem;
+        }
+
+        .lbl-toggle::before {
+            border-top: 7px solid transparent;
+            border-bottom: 7px solid transparent;
+            border-left: 7px solid currentColor;
+            margin-right: 1rem;
+        }
+
+        .collapsible-content {
+            width: 95%;
+            margin-left: 2.5rem;
+        }
+
+        .content-inner {
+            font-size: 1.3rem;
+        }
+
+        .boring-item {
+            p {
+                font-size: 1.3rem;
+            }
+        }
+    }
+
+    footer {
+        font-size: 1.5rem;
+
+        p {
+            font-size: 1rem;
+        }
+
+        svg {
+            height: 2.8rem;
+            width: 2.8rem;
+        }
+    }
+
+    #logo {
+        height: 2.5rem;
+    }
+}
+
+@media only screen and (max-width: 1920px) {
+    #main-content {
+        font-size: 1.3rem;
+
+        h1 {
+            font-size: 5rem;
+        }
+
+        #socials {
+            font-size: 1.6rem;
+        }
+    }
+
+    #boring-link {
+        font-size: 3rem;
+
+        .lbl-toggle {
+            font-size: 1.1rem;
+        }
+
+        .lbl-toggle::before {
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-left: 5px solid currentColor;
+            margin-right: 1rem;
+        }
+
+        .collapsible-content {
+            width: 95%;
+            margin-left: 2.3rem;
+        }
+
+        .content-inner {
+            font-size: 1rem;
+        }
+
+        .boring-item {
+            p {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    footer {
+        font-size: 1.2rem;
+
+        p {
+            font-size: .9rem;
+        }
+
+        svg {
+            height: 2.2rem;
+            width: 2.2rem;
+        }
+    }
+
+    #logo {
+        height: 2rem;
     }
 }
 
