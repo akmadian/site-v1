@@ -23,7 +23,7 @@ module.exports = {
   },
   entry: ['./src/js/app.js', './src/style/styles.scss'],
   output: {
-    path: path.resolve(__dirname, 'docs'),
+    path: path.resolve(__dirname, '.'),
     filename: 'app.bundle.js',
   },
   optimization: {
