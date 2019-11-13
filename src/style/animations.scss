@@ -1,0 +1,62 @@
+@import "./colors/colors.scss";
+/*
+@keyframes linkColorFade {
+    from { 
+        fill: #000000;
+        color: #000000;
+    }
+    to { 
+        fill: $gold;
+        color: $gold;
+    }
+}*/
+/*
+@keyframes linkBackFade {
+    from {
+        background-color: $transparent;
+        color: $scheme2-dark;
+    }
+    to {
+        background-color: $magenta;
+        color: #FFF;
+    }
+}*/
+
+@keyframes scrollArrowBounce {
+    0% {
+        -webkit-transform: rotate(-45deg) translate(0, 0);
+    }
+    20% {
+        -webkit-transform: rotate(-45deg) translate(-10px, 10px);
+    }
+    40% {
+        -webkit-transform: rotate(-45deg) translate(0, 0);
+    }
+}
+
+@keyframes opacityFade {
+    from {
+        filter: opacity(.4);
+    }
+    to {
+        filter: opacity(1);
+    }
+}
+
+.anim_link-underline{
+    position:relative;
+    text-decoration:none;
+    display:inline-block;
+  }
+  .anim_link-underline:after {
+    display:block;
+    content: '';
+    border-bottom: solid 2px #FFF;  
+    transform: scaleX(0);  
+    transition: transform 250ms ease-in-out;
+    transform-origin:100% 50%
+  }
+  .anim_link-underline:hover:after { 
+    transform: scaleX(1);
+    transform-origin:0 50%;
+  }
