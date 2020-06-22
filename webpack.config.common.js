@@ -60,10 +60,6 @@ module.exports = {
       filename: '[name].css',
       chunkFilename: '[id].css',
     }),
-    new CopyWebpackPlugin([{
-      from: './src/static/',
-      to: './static/',
-    }]),
     ...generateHTMLPlugins(),
   ],
   stats: {
